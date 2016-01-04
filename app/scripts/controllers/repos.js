@@ -11,8 +11,9 @@ angular.module('anguGHApp')
   .controller('ReposCtrl', ['$scope', 'UserRepo', 'Repos', '$routeParams',
     function ($scope, UserRepo, Repos, $routeParams) {
     $scope.findRepos = function () {
-      if ($routeParams.user) {
-        UserRepo.query({user: $routeParams.user}, function (repos) {
+      $scope.username = $routeParams.user;
+      if ($scope.username) {
+        UserRepo.query({user: $scope.username}, function (repos) {
           $scope.repos = repos;
         });
       }

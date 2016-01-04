@@ -28,17 +28,32 @@
 
 <!-- Add your site or application content here -->
 <div class="header">
-  <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-        <span class="sr-only">Toggle navigation</span>
-      </button>
-      <a class="navbar-brand" href="#">Angu GH</a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar-collapse-01">
-      <ul class="nav navbar-nav navbar-left">
-        <li><a ng-href="#/">User</a></li>
-      </ul>
+  <nav class="navbar navbar-inverse navbar-embossed" role="navigation" data-ng-controller="NavbarCtrl">
+    <a class="navbar-brand" href="#/">Angu GH</a>
+
+    <!--<div class="col-md-9">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+          <span class="sr-only">Toggle navigation</span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse-01">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a ng-href="#/">User</a></li>
+        </ul>
+      </div>
+    </div>-->
+    <div class="col-md-5">
+      <form class="navbar-form form-inline" ng-submit="search(username)" role="form">
+        <div class="input-group">
+          <input type='text' placeholder="Username" name="q" ng-model="username" class="form-control">
+
+        <span class="input-group-btn">
+                        <button type="submit" class="btn"><span class="fui-search"></span></button>
+                      </span>
+        </div>
+
+      </form>
     </div><!-- /.navbar-collapse -->
   </nav><!-- /navbar -->
 </div>
@@ -101,6 +116,7 @@
 <script src="scripts/controllers/repos.js"></script>
 <script src="scripts/controllers/stats.js"></script>
 <script src="scripts/services/stats.js"></script>
+<script src="scripts/controllers/navbar.js"></script>
 <!-- endbuild -->
 </body>
 </html>

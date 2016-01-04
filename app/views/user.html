@@ -1,21 +1,3 @@
-<div class="row">
-  <div class="col-xs-12">
-    <form class="form-inline" name="getUser" data-ng-submit="findUser()">
-      <div class="form-group">
-        <div class="input-group">
-          <span class="input-group-addon">
-                      <span class="fui-user"></span>
-                      </span>
-          <input class="form-control" data-ng-model="username" type="search" placeholder="Username">
-                      <span class="input-group-btn">
-                        <button type="submit" class="btn"><span class="fui-search"></span></button>
-                      </span>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
-
 <div data-ng-hide="!user.$resolved || user.length">
   <div class="row">
     <div class="col-xs-12">
@@ -27,17 +9,17 @@
       <img src="{{user.avatar_url}}"/>
     </div>
     <div class="col-xs-12 col-md-6">
-      <div class="row">
+      <div class="row" data-ng-show="user.name">
         <div class="col-xs-12">
           <i class="fui-user"></i> <span data-ng-bind="user.name"></span>
         </div>
       </div>
-      <div class="row">
+      <div class="row" data-ng-show="user.blog">
         <div class="col-xs-12">
           <i class="fui-link"></i> <span data-ng-bind="user.blog"></span>
         </div>
       </div>
-      <div class="row">
+      <div class="row" data-ng-show="user.email">
         <div class="col-xs-12">
           <i class="fui-mail"></i> <span data-ng-bind="user.email"></span>
         </div>
