@@ -395,7 +395,7 @@ module.exports = function (grunt) {
         }, {
           expand: true,
           cwd: 'bower_components/flat-ui/dist',
-          src: 'fonts/lato/*',
+          src: 'fonts/*/*',
           dest: '<%= yeoman.dist %>'
         }]
       },

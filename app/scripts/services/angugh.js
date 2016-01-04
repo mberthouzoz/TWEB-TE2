@@ -9,5 +9,5 @@
  */
 angular.module('anguGHApp')
   .constant('APIConfig', {
-    'URL_GITHUB_API': "http://api.github.com/"
+    'URL_GITHUB_API': "https://api.github.com/"
   });
