@@ -29,10 +29,3 @@ angular.module('anguGHApp')
         });
     }
   ]);
-/*
-angular.module('anguGHApp')
-  .factory('StatsPunchCard', ['$resource', 'APIConfig',
-    function ($resource, APIConfig) {
-      return $resource(APIConfig.URL_GITHUB_API + 'repos/:user/:repo/stats/punch_card', {repo: '@repo', user: '@user'});
-    }
-  ]);*/

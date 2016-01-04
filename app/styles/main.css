@@ -1,0 +1,16 @@
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+.img-center {
+  display: inline-block;
+  text-align: center;
+}

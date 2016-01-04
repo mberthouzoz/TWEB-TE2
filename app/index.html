@@ -1,100 +1,106 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css" />
-    <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css" />
-    <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css" />
-    <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css" />
-    <!-- endbower -->
-    <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
-   <!-- <link rel="stylesheet" href="styles/main.css"> -->
-    <!-- endbuild -->
-  </head>
-  <body ng-app="anguGHApp">
-    <div growl></div>
-    <!--[if lte IE 8]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-      your browser</a> to improve your experience.</p>
-    <![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/videojs/dist/video-js/video-js.css"/>
+  <link rel="stylesheet" href="bower_components/flat-ui/dist/css/flat-ui.css"/>
+  <link rel="stylesheet" href="bower_components/angular-chart.js/dist/angular-chart.css"/>
+  <link rel="stylesheet" href="bower_components/angular-growl-v2/build/angular-growl.css"/>
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="anguGHApp">
+<div growl></div>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+  your browser</a> to improve your experience.</p>
+<![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
-            <span class="sr-only">Toggle navigation</span>
-          </button>
-          <a class="navbar-brand" href="#">Angu GH</a>
+<!-- Add your site or application content here -->
+<div class="header">
+  <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">Angu GH</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse-01">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a ng-href="#/">User</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </nav><!-- /navbar -->
+</div>
+
+<div class="container">
+  <div ng-view=""></div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="footer-title">
+          <p><span class="glyphicon glyphicon-heart"></span> mberthouzoz</p>
         </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse-01">
-          <ul class="nav navbar-nav navbar-left">
-            <li><a ng-href="#/">User</a></li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </nav><!-- /navbar -->
-    </div>
-
-    <div class="container">
-      <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> mberthouzoz</p>
       </div>
     </div>
+  </div>
+</footer>
 
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <script>
-      !function (A, n, g, u, l, a, r) {
-        A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-            (A[l].q = A[l].q || []).push(arguments)
-          }, A[l].l = +new Date, a = n.createElement(g),
-          r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-      }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+<script>
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-      ga('create', 'UA-XXXXX-X');
-      ga('send', 'pageview');
-    </script>
+  ga('create', 'UA-XXXXX-X');
+  ga('send', 'pageview');
+</script>
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/videojs/dist/video-js/video.js"></script>
-    <script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
-    <script src="bower_components/Chart.js/Chart.js"></script>
-    <script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
-    <script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/videojs/dist/video-js/video.js"></script>
+<script src="bower_components/flat-ui/dist/js/flat-ui.js"></script>
+<script src="bower_components/Chart.js/Chart.js"></script>
+<script src="bower_components/angular-chart.js/dist/angular-chart.js"></script>
+<script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/user.js"></script>
-    <script src="scripts/services/user.js"></script>
-    <script src="scripts/services/angugh.js"></script>
-    <script src="scripts/services/repos.js"></script>
-    <script src="scripts/controllers/repos.js"></script>
-    <script src="scripts/controllers/stats.js"></script>
-    <script src="scripts/services/stats.js"></script>
-    <!-- endbuild -->
-  </body>
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="scripts/app.js"></script>
+<script src="scripts/controllers/user.js"></script>
+<script src="scripts/services/user.js"></script>
+<script src="scripts/services/angugh.js"></script>
+<script src="scripts/services/repos.js"></script>
+<script src="scripts/controllers/repos.js"></script>
+<script src="scripts/controllers/stats.js"></script>
+<script src="scripts/services/stats.js"></script>
+<!-- endbuild -->
+</body>
 </html>
