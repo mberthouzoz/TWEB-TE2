@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'chart.js',
-    'angular-growl'
+    'angular-growl',
+    'angular-loading-bar'
   ])
   .config(function ($routeProvider) {
     $routeProvider

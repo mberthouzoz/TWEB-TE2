@@ -14,3 +14,19 @@ footer {
   display: inline-block;
   text-align: center;
 }
+
+#loading-bar-spinner .spinner-icon {
+  border-top-color:  #fff;
+  border-left-color: #fff;
+}
+
+#loading-bar .bar {
+  background: #fff;
+}
+
+#loading-bar .peg {
+  -moz-box-shadow: #fff 1px 0 6px 1px;
+  -ms-box-shadow: #fff 1px 0 6px 1px;
+  -webkit-box-shadow: #fff 1px 0 6px 1px;
+  box-shadow: #fff 1px 0 6px 1px;
+}
