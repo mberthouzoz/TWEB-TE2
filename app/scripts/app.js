@@ -49,8 +49,3 @@ angular.module('anguGHApp')
       datasetFill: false
     });
   }]);
-
-angular.module('anguGHApp')
-  .run(['$http', function ($http) {
-    $http.defaults.headers.common['Authorization'] = 'Basic ' + 'bWJlcnRob3V6b3o6bWItLS0yNjky';
-  }]);
