@@ -1,4 +1,7 @@
 <div data-ng-init="findRepos()">
+  <div data-ng-show="!repos.$resolved || !repos.length">
+    <span>No repo</span>
+  </div>
   <div data-ng-hide="!repos.$resolved || !repos.length">
     <h2>Repos - {{repos.length}}</h2>
     <div class="row">

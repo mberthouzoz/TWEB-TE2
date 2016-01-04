@@ -8,10 +8,11 @@
  * Controller of the anguGHApp
  */
 angular.module('anguGHApp')
-  .controller('StatsCtrl', ['$scope', 'StatsContributors', 'StatsPunchCard', '$routeParams', '$filter',
-    function ($scope, StatsContributors, StatsPunchCard, $routeParams, $filter) {
+  .controller('StatsCtrl', ['$scope', 'Stats', '$routeParams', '$filter',
+    function ($scope, Stats, $routeParams, $filter) {
       $scope.getContributors = function () {
-        StatsContributors.query({user: $routeParams.user, repo: $routeParams.repo}, function (contributions) {
+
+        Stats.contributors({user: $routeParams.user, repo: $routeParams.repo}, function (contributions) {
           $scope.nbContribution = 0;
 
           $scope.chartStatsCodeFrequencyLabels = [];
@@ -20,8 +21,6 @@ angular.module('anguGHApp')
           var add = [];
           var del = [];
           var com = [];
-
-          //var nbAdd, nbDel, nbCom = 0;
 
           $scope.chartStatsContribuLabels = [];
           $scope.chartStatsContribuData = [];
@@ -64,7 +63,7 @@ angular.module('anguGHApp')
       };
 
       $scope.getPunchCards = function () {
-        StatsPunchCard.query({user: $routeParams.user, repo: $routeParams.repo}, function (punchCards) {
+        Stats.punchCards({user: $routeParams.user, repo: $routeParams.repo}, function (punchCards) {
 
           $scope.chartStatsPunchCardsLabels = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
