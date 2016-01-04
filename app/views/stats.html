@@ -1,0 +1,48 @@
+<div data-ng-controller="StatsCtrl">
+  <div data-ng-init="getContributors()">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Commits - {{nbContribution}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <canvas class="chart chart-bar" chart-data="chartStatsContribuData"
+                chart-labels="chartStatsContribuLabels">
+        </canvas>
+      </div>
+      <div class="col-xs-12 col-md-6">
+        <canvas class="chart chart-pie" chart-data="chartStatsContribuData[0]"
+                chart-labels="chartStatsContribuLabels" chart-legend="true">
+        </canvas>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Code frequency</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <canvas class="chart chart-line"
+                chart-data="chartStatsCodeFrequencyData" chart-labels="chartStatsCodeFrequencyLabels"
+                chart-series="chartStatsCodeFrequencySeries">
+        </canvas>
+      </div>
+    </div>
+  </div>
+  <div data-ng-init="getPunchCards()">
+    <div class="row">
+      <div class="col-xs-12">
+        <h2>Commits per day</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6">
+        <canvas class="chart chart-line"
+                chart-data="chartStatsPunchCardsData" chart-labels="chartStatsPunchCardsLabels">
+        </canvas>
+      </div>
+    </div>
+  </div>
+</div>

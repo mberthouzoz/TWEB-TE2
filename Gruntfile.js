@@ -28,6 +28,12 @@ module.exports = function (grunt) {
   // Define the configuration for all the tasks
   grunt.initConfig({
 
+    bower: {
+      install: {
+        //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
+      }
+    },
+
     // Project settings
     yeoman: appConfig,
 
@@ -220,7 +226,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {
@@ -338,7 +344,7 @@ module.exports = function (grunt) {
     ngtemplates: {
       dist: {
         options: {
-          module: 'anguSeApp',
+          module: 'anguGHApp',
           htmlmin: '<%= htmlmin.dist.options %>',
           usemin: 'scripts/scripts.js'
         },
@@ -391,6 +397,11 @@ module.exports = function (grunt) {
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
+        }, {
+          expand: true,
+          cwd: 'bower_components/flat-ui/dist',
+          src: 'fonts/lato/*',
           dest: '<%= yeoman.dist %>'
         }]
       },
@@ -478,6 +489,11 @@ module.exports = function (grunt) {
     'newer:jshint',
     'newer:jscs',
     'test',
+    'build'
+  ]);
+
+  grunt.registerTask('heroku:production', [
+    'bower:install',
     'build'
   ]);
 };

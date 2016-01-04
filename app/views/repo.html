@@ -1,0 +1,22 @@
+<div data-ng-init="findRepo()">
+  <div class="row">
+    <div class="col-xs-12"><a data-ng-href="#/repos/{{repo.owner.login}}">Back</a></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 data-ng-bind="repo.name"></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      Language : <span data-ng-bind="repo.language"></span>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      Subscribers : <span data-ng-bind="repo.subscribers_count"></span>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      Networks : <span data-ng-bind="repo.network_count"></span>
+    </div>
+  </div>
+</div>
+<div data-ng-include="'views/stats.html'"></div>

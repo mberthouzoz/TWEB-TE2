@@ -2,34 +2,50 @@
 
 /**
  * @ngdoc overview
- * @name anguSeApp
+ * @name anguGHApp
  * @description
- * # anguSeApp
+ * # anguGHApp
  *
  * Main module of the application.
  */
 angular
-  .module('anguSeApp', [
+  .module('anguGHApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'chart.js',
+    'angular-growl'
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/repos/:user', {
+        templateUrl: 'views/repos.html',
+        controller: 'ReposCtrl',
+        controllerAs: 'repos'
+      })
+      .when('/repos/:user/:repo', {
+        templateUrl: 'views/repo.html',
+        controller: 'ReposCtrl',
+        controllerAs: 'repos'
       })
       .otherwise({
         redirectTo: '/'
       });
   });
+
+angular.module('anguGHApp')
+  // Optional configuration
+  .config(['ChartJsProvider', function (ChartJsProvider) {
+    // Configure all line charts
+    ChartJsProvider.setOptions('Line', {
+      datasetFill: false
+    });
+  }]);

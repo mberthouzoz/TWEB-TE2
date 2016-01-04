@@ -1,0 +1,19 @@
+<div data-ng-init="findRepos()">
+  <div data-ng-hide="!repos.$resolved || !repos.length">
+    <h2>Repos - {{repos.length}}</h2>
+    <div class="row">
+      <div class="col-xs-12" data-ng-repeat="repo in repos track by repo.id">
+        <div class="row">
+          <div class="col-xs-12">
+            <a data-ng-href="#/repos/{{repo.owner.login}}/{{repo.name}}"><strong data-ng-bind="repo.name"></strong> </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <span data-ng-bind="repo.description"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
