@@ -16,7 +16,8 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-google-cdn',
+    bower: 'grunt-bower-task'
   });
 
   // Configurable paths for the application
@@ -27,13 +28,6 @@ module.exports = function (grunt) {
 
   // Define the configuration for all the tasks
   grunt.initConfig({
-
-    bower: {
-      install: {
-        //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
-      }
-    },
-
     // Project settings
     yeoman: appConfig,
 
@@ -433,6 +427,11 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      }
+    },
+    bower: {
+      install: {
+        //just run 'grunt bower:install' and you'll see files from your Bower packages in lib directory
       }
     }
   });
