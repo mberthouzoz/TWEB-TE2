@@ -15,6 +15,12 @@ footer {
   text-align: center;
 }
 
+.navbar {
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
 #loading-bar-spinner .spinner-icon {
   border-top-color:  #fff;
   border-left-color: #fff;
