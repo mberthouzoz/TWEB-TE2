@@ -9,10 +9,12 @@
  */
 angular.module('anguGHApp')
   .controller('UserCtrl', ['$scope', '$location', 'User', 'UserRepo', 'growl', function ($scope, $location, User, UserRepo, growl) {
-  console.log($location);
     var username = $location.search()['q'];
-    console.log(username);
+
     if (username) {
+      /**
+       * Gets user information
+       */
       User.get({user: username}, function (user) {
         $scope.user = user;
 

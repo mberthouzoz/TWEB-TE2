@@ -10,15 +10,8 @@
 angular.module('anguGHApp')
   .factory('Stats', ['$resource', 'APIConfig',
     function ($resource, APIConfig) {
-      return $resource(APIConfig.URL_GITHUB_API + 'repos/:user/:repo/stats/:action', {},
+      return $resource(APIConfig.URL_GITHUB_API + 'repos/:user/:repo/stats/:action', {user: '@user', repos:'@repos'},
         {
-          'contributors': {
-            method: 'GET',
-            isArray: true,
-            params: {
-              action: 'contributors'
-            }
-          },
           'punchCards': {
             method: 'GET',
             isArray: true,
@@ -28,4 +21,13 @@ angular.module('anguGHApp')
           }
         });
     }
-  ]);
+  ])
+  .factory('Contributors', ['$http', 'APIConfig',
+    function($http, APIConfig) {
+      return function(user, repo) {
+        return $http({
+          method: 'GET',
+          url: APIConfig.URL_GITHUB_API + 'repos/'+user+'/'+repo+'/stats/contributors',
+        });
+      };
+    }]);
