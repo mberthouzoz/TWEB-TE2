@@ -1,12 +1,32 @@
-# angu-gh
+# TWEB TE 2
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.14.0.
+## Structure
 
-## Build & development
+- app
+  - scripts
+    - controllers
+      - navbar.js
+      - repos.js
+      - stats.js
+      - user.js
+    - services
+      - angugh.js
+      - repos.js
+      - stats.js
+      - user.js
+    - app.js
+  - styles
+  - views
+  - 404.html
+  - index.html
+- bower.js
+- Gruntfile.js
+- package.json
+- Procfile
+- web.js
 
-Run `grunt` for building and `grunt serve` for preview.
+## Build & developpement
 
-## Testing
+Exécuter `grunt` pour build et `grunt serve` pour prévualiser.
 
-Running `grunt test` will run the unit tests with karma.
+##
